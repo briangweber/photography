@@ -1,0 +1,54 @@
+---
+import { SITE_TITLE, MASTODON_URL, TWITTER_URL, INSTAGRAM_URL } from '../consts';
+import { Instagram, Twitter, Mastodon } from "simple-icons-astro";
+---
+
+<div class="social-links">
+  <a href={MASTODON_URL} target="_blank">
+    <span class="sr-only">Follow on Mastodon</span>
+    <Mastodon />
+  </a>
+  <a href={TWITTER_URL} target="_blank">
+    <span class="sr-only">Follow on Twitter</span>
+    <Twitter />
+  </a>
+  <a href={INSTAGRAM_URL} target="_blank">
+    <span class="sr-only">Go to Astro's GitHub repo</span>
+    <Instagram />
+  </a>
+</div>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	.social-links,
+	.social-links a {
+		display: flex;
+    padding: 1em 0.25em;
+		color: rgb(var(--gray));
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	.social-links a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
