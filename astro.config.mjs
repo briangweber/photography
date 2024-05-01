@@ -7,6 +7,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://briangweber.github.io',
 	integrations: [mdx(), sitemap()],
-	redirects: { "/index.astro": "/blog", "": "/blog"},
+	redirects: { "/index.astro": "/photo-blog/blog", "": "/photo-blog/blog"},
 	base: "/photo-blog"
 });
