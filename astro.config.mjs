@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://briangweber.github.io',
 	integrations: [mdx(), sitemap()],
-	redirects: { "/index.astro": "/blog", "": "/blog"}
+	redirects: { "/index.astro": "/blog", "": "/blog"},
+	base: "/photo-blog"
 });
