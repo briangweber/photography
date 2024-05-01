@@ -2,7 +2,7 @@
 title: 'Creating a solar time lapse'
 description: 'Capturing the slow rotation of the sun'
 pubDate: 'Apr 24 2024'
-heroImage: '/2024_04_24/2024-04-24_hero.png'
+heroImage: '/photo-blog/2024_04_24/2024-04-24_hero.png'
 ---
 
 import { YouTube } from "astro-embed";
@@ -27,11 +27,11 @@ This is pretty quick and easy - I could probably go from start to finish in 20 m
 
 With yesterday's crystal clear forecast all day, I set out to capture a time lapse of the sun in an effort to see the rotation. The sun rotates incredibly slowly - it takes 27 days to do a full rotation! I knew that I would need to take images over the course of many hours to see noticeable rotation, so that's what I did. I started imaging at 8 AM and used FireCapture's AutoRun feature to take a 50-frame video every 5 minutes until the sun set behind the trees at around 5 PM. Around 1pm, I had to do a meridian flip to avoid hitting the tripod with my camera/telescope (I have mount limits in place, so it would have stopped short of that, but I needed to flip to keep imaging). To execute the flip, I used the Orbitals plugin again and told it to slew to the sun. The software knew it was past meridian, so it simply flipped the scope to the opposite side of the tripod and flipped the scope around. Alignment was dead on, so I hopped back to FireCapture and restarted the AutoRun. The result was 106 very short videos of the sun. Now to process!
 
-![Using AutoStakkert 3 for bulk stacking](/2024_04_24/autostakkert.png)
+![Using AutoStakkert 3 for bulk stacking](/photo-blog/2024_04_24/autostakkert.png)
 
 For the most part, processing was the same just done in bulk. AutoStakkert has the option to select multiple videos when you hit "Open", so I used that feature to load up the videos. I followed the normal process of hitting "Analyze", resizing the AP grid to get around 20 alignment points, and then hit "Stack". Most of the images came out great, but some had odd square artifacts. I could probably have salvaged those by re-running with some different parameters but I didn't bother. In the end, I had 87 good images that needed to be processed.
 
-![Using SolarToolbox in PixInsight](/2024_04_24/pixinsight.png)
+![Using SolarToolbox in PixInsight](/photo-blog/2024_04_24/pixinsight.png)
 
 I opened up one of the images in PixInsight and tweaked the settings in SolarToolbox to make it look good, made some adjustments in Curves and then used DynamicCrop to get the rotation and cropping I wanted. I loaded all of the images that I capture pre-flip into an ImageContainer and applied the series of changes to all of them. The post-flip images images needed an extra 180 degree rotation after the processing I ran on the pre-flip images, so I tested that process on one of the post-flip images and then applied it to all of them. Now I had 87 properly aligned and processed images.
 
