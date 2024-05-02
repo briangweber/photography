@@ -1,11 +1,13 @@
 ---
 import SocialMediaIcons from "./SocialMediaIcons.astro";
+import { GoogleAnalytics } from "astro-analytics";
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()} Brian Weber. All rights reserved.
 	<div class="social-links"><SocialMediaIcons /></div>
+	<GoogleAnalytics id="G-7J7F3FC0CR" />
 </footer>
 <style>
 	footer {
