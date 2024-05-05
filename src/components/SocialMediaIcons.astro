@@ -1,6 +1,6 @@
 ---
-import { SITE_TITLE, MASTODON_URL, TWITTER_URL, INSTAGRAM_URL } from '../consts';
-import { Instagram, Twitter, Mastodon } from "simple-icons-astro";
+import { SITE_TITLE, MASTODON_URL, TWITTER_URL, INSTAGRAM_URL, FACEBOOK_URL } from '../consts';
+import { Instagram, Twitter, Mastodon, Facebook } from "simple-icons-astro";
 ---
 
 <div class="social-links">
@@ -13,8 +13,12 @@ import { Instagram, Twitter, Mastodon } from "simple-icons-astro";
     <Twitter />
   </a>
   <a href={INSTAGRAM_URL} target="_blank">
-    <span class="sr-only">Go to Astro's GitHub repo</span>
+    <span class="sr-only">Follow on Instagram</span>
     <Instagram />
+  </a>
+  <a href={FACEBOOK_URL} target="_blank">
+    <span class="sr-only">Follow on Facebook</span>
+    <Facebook />
   </a>
 </div>
 
