@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://briangweber.github.io',
+	site: 'https://blog.briangweber.com',
 	integrations: [mdx(), sitemap()],
 });
