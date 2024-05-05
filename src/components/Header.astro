@@ -2,15 +2,13 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import SocialMediaIcons from './SocialMediaIcons.astro';
-
-console.log(import.meta.env.BASE_URL);
 ---
 
 <header>
 	<nav>
-		<h2><a href=`${import.meta.env.BASE_URL}`>{SITE_TITLE}</a></h2>
+		<h2><a href=`/`>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href=`${import.meta.env.BASE_URL}`>Blog</HeaderLink>
+			<HeaderLink href=`/`>Blog</HeaderLink>
 			<HeaderLink href="https://briangweber.com">Store</HeaderLink>
 			<!-- <HeaderLink href=`${import.meta.env.BASE_URL}/about``>About</HeaderLink> -->
 		</div>

@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://aws.dlw52mqavcsxr.amplifyapp.com',
+	site: 'https://blog.briangweber.com',
 	integrations: [mdx(), sitemap()],
 	base: "/"
 });
