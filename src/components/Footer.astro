@@ -7,7 +7,7 @@ const today = new Date();
 <footer>
 	&copy; {today.getFullYear()} Brian Weber. All rights reserved.
 	<div class="social-links"><SocialMediaIcons /></div>
-	<GoogleAnalytics id="G-7J7F3FC0CR" />
+	<GoogleAnalytics id={import.meta.env.PUBLIC_GA_ID} />
 </footer>
 <style>
 	footer {
