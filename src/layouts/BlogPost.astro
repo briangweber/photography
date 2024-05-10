@@ -55,7 +55,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				font-style: italic;
 			}
 		</style>
-	</head>
+</head>
+
+	<meta property="og:image" content={new URL(heroImage || "/default_image.jpg", Astro.url)} />
 
 	<body>
 		<Header />
