@@ -1,0 +1,18 @@
+---
+interface Props {
+  text: string;
+  link?: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<style>
+  .caption {
+    text-align: center; 
+    margin-top: -8px;
+		font-style: italic;
+  }
+</style>
+
+<div class="caption">{text}{link && <span> - prints available <a href={link} target="_blank">here</a></span>}
