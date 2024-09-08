@@ -5,7 +5,7 @@ pubDate: 'Jul 23 2024'
 heroImage: '/2024_07_23-plane.jpg'
 ---
 
-import { Image } from 'astro:assets';
+import ImageFromPath from "../../components/ImageFromPath.astro";
 
 Astrophotography is often a matter of effort and planning - you have to set up and maintain your gear, pick your targets based on weather and moon conditions, set up your sequence, process the captured image, etc. Sometimes you have to travel to specific locations to get the shot you want (landscape photography, eclipses, transits). Other times, you just walk into a cool shot.
 
@@ -17,10 +17,10 @@ After some research, it appears the plane I photographed was American Airlines f
 hours as their flight was delayed to perfectly set up this image for me: https://www.flightradar24.com/2024-07-19/11:53/20x/AAL2527/363936e4.
 
 Here's my fully processed solar image sans plane:
-![Fully processed solar image](/2024_07_23-sun.jpg)
+<ImageFromPath imagePath="2024_07_23/sun.jpg" alt="Fully processed sun image" />
 
 Here's the plane (single frames are noisy and fuzzy):
-![Plane transit](/2024_07_23-plane.jpg)
+<ImageFromPath imagePath="2024_07_23/plane.jpg" alt="Plane transit" />
 
 Here's a slow motion GIF of the transit:
-![Animated](/2024_07_23-animated.gif)
+<ImageFromPath imagePath="2024_07_23/animated.gif" alt="Animated" />
