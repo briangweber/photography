@@ -6,5 +6,5 @@ export const SITE_DESCRIPTION = 'Welcome to my blog! Check out the store for pri
 export const MASTODON_URL = "https://astrodon.social/@webcubus";
 export const FACEBOOK_URL = "https://www.facebook.com/briangweberphotography";
 export const INSTAGRAM_URL = "https://www.instagram.com/briangweber/";
-export const TWITTER_URL = "https://twitter.com/briangweber";
 export const YOUTUBE_URL = "https://www.youtube.com/channel/UCvnKTR6htKtOmJAIZ-YW8Pw";
+export const BLUESKY_URL = "https://bsky.app/profile/briangweber.bsky.social"
