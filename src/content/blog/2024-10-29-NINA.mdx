@@ -1,8 +1,8 @@
 ---
 title: 'N.I.N.A. Templates'
 description: "N.I.N.A. is awesome for controlling astro imaging sessions - here are my templates to make it easy"
-pubDate: 'Oct 27 2024'
-heroImage: '/2024_10_14.png'
+pubDate: 'Oct 29 2024'
+heroImage: '/2024_10_29.jpg'
 ---
 
 import { YouTube } from "astro-embed";
@@ -14,14 +14,14 @@ import ImageFromPath from "../../components/ImageFromPath.astro";
 Instructions:
 * Templates are located [here](https://drive.google.com/drive/folders/1dn7ZkRN5SoPft7d1axeyCJD-E61LrjI8?usp=sharing) - click Download next to the ones you want to download
 * Move them into Documents > N.I.N.A. > Templates on your computer
-* You should see them when you open N.I.N.A.
+* You should see them when you open N.I.N.A. If you haven't already, you can use the Advanced Sequencer exclusively by going to Options -> General -> Disable Legacy Sequencer and set it to "on".
 
 ## Plugins
 
 In addition to the awesome base features of N.I.N.A, there is a large collection of plugins that add even more functionality. These can be installed directly in N.I.N.A. by clicking "Plugins" and selecting "Available".
 
 For these templates, we are going to use:
-* Ground Station - not required, but you can hook in push notifications to your imaging session. Blog post coming soon on this topic!
+* Ground Station - not required, but you can hook in push notifications to your imaging session. ([This page](https://daleghent.com/ground-station) describes the plugin and the embedded video has setup instructions for the various sources)
 * Three Point Polar Alignment - uses the main camera and plate solving for polar alignment
 * Sequencer Powerups - allows the use of variables in templates
 
@@ -31,12 +31,12 @@ There are a few ways to save information in N.I.N.A.
 
 * Targets: used to save exact center location, rotation, and template associated with a target.
 * Templates: used to save an instruction set for easy reuse. Once saved, you can drop them into your sequence.
-* Sequences: you can save entire sequences to use across sessions. I mostly use an "Empty" sequence, which just contains the session start and session end instructions.
+* Sequences: you can save entire sequences to use across sessions. I mostly use an "Empty" sequence, which just contains the session start and session end instructions. Sometimes if I want to just repeat a session exactly in the future, I'll save the whole sequence for quick and easy reuse.
 
 ## Sequence Start
 
 Here's the template I use to kick off a sequence:
-<ImageFromPath imagePath="2024_10_27/sequence_start.png" alt="This template sets the filter, points the scope straight up, and kicks off autofocus" />
+<ImageFromPath imagePath="2024_10_29/sequence_start.png" alt="This template sets the filter, points the scope straight up, and kicks off autofocus" />
 
 Step by step:
 * Failures to Pushover - any failures here will send a push notification to my phone
@@ -53,7 +53,7 @@ Step by step:
 I recently started using Sequencer Powerups to do some automated parameter setting. This is handy because it's easy to forget to go into the individual target blocks to edit reused elements.
 
 Here's the block for settings:
-<ImageFromPath imagePath="2024_10_27/settings.png" alt="Set some variables for reuse in the imaging blocks" />
+<ImageFromPath imagePath="2024_10_29/settings.png" alt="Set some variables for reuse in the imaging blocks" />
 
 We are setting the following variables:
 * TEMP: the temperature to use for the cooled camera
@@ -68,7 +68,7 @@ The next block is conditional: if the filter is set to my narrowband filter, cha
 You can use Three Point Polar alignment from the imaging tab, but it's handy to have it in a template instead. I have one template for each imaging location I have in the yard - the first spot has north visibility, so I point near Polaris and rotate from there. The second is right up against some trees entirely blocking the north view, so I aim off to the east.
 
 Here's the polar alignment template:
-<ImageFromPath imagePath="2024_10_27/polar_align.png" alt="Polar align the rig" />
+<ImageFromPath imagePath="2024_10_29/polar_align.png" alt="Polar align the rig" />
 
 Not much interesting in here other than:
 * In the "Three Point Polar Alignment" instruction, we are specifying where we want to point the scope.
@@ -81,7 +81,7 @@ This is the complicated one, but for good reason. "Targets" let you save the ass
 ### Overview
 
 Here's the imaging template overall and we'll go into each of the collapsed sections individually:
-<ImageFromPath imagePath="2024_10_27/imaging_overview.png" alt="Overview of the imaging template" />
+<ImageFromPath imagePath="2024_10_29/imaging_overview.png" alt="Overview of the imaging template" />
 
 * The "Target" section will get populated with what you actually want to image. You can go to the "Target" tab and drag your target into this section.
 * Triggers: these are events that will happen globally across the sequence
@@ -95,7 +95,7 @@ Here's the imaging template overall and we'll go into each of the collapsed sect
 ### Target Start
 
 This block gets us pointed at the target, camera cooled, and guiding underway:
-<ImageFromPath imagePath="2024_10_27/target_start.png" alt="Get us aligned on our target and ready to shoot" />
+<ImageFromPath imagePath="2024_10_29/target_start.png" alt="Get us aligned on our target and ready to shoot" />
 
 We're using a parallel container so the camera cools while simultaneously getting aligned and kicking off guiding. We will not exit this block until both tasks have completed. Most of the time I leave my imaging train intact so I do not need to check rotation, but if you do, you can add the "Solve and Rotate" instruction. I do not have an auto rotator, but I do use the manual rotator (configuration steps [below](#configuring-the-manual-rotator)), which will provide instructions to ensure you are properly rotated.
 
@@ -104,12 +104,12 @@ Note the use of "Cool Camera+", which is the Sequence Powerups version of the in
 ### Target Imaging Instructions
 
 Here's where the magic happens:
-<ImageFromPath imagePath="2024_10_27/imaging_block.png" alt="Take images, ensure focus, make sure we don't drift" />
+<ImageFromPath imagePath="2024_10_29/imaging_block.png" alt="Take images, ensure focus, make sure we don't drift" />
 
 * Triggers will run while we are imaging in this block.
-** Center After Drift: Periodically plate solve the image and make sure we're still on target. This almost never actually re-aligns because my tracking and guiding keeps everything on target. It could drift if clouds roll through. You can adjust the precision of drift detection, but make sure not to make it too precise otherwise dithering (which intentionally drifts slightly) could trigger this.
-** Restore Guiding: This will resume guiding if we have to correct for drift
-** AF After HFR increase: HFR is a measure of star size. If the star size increases, it indicates that we're losing focus. This commonly occurs when the temperature drops over the course of a session.
+  * Center After Drift: Periodically plate solve the image and make sure we're still on target. This almost never actually re-aligns because my tracking and guiding keeps everything on target. It could drift if clouds roll through. You can adjust the precision of drift detection, but make sure not to make it too precise otherwise dithering (which intentionally drifts slightly) could trigger this.
+  * Restore Guiding: This will resume guiding if we have to correct for drift
+  * AF After HFR increase: HFR is a measure of star size. If the star size increases, it indicates that we're losing focus. This commonly occurs when the temperature drops over the course of a session.
 * Loop while Altitude Above Horizon: The counterpart to "Wait until Above Horizon." Using that same custom horizon we talked about earlier, we'll continue the instructions below until the target drops below the given altitude above the horizon.
 * Loop Until Time: Again, you may want to adjust this to Astronomical Dawn. If either of the loop conditions are violated, this image block will be terminated. You can also set this to "Time" if you want to move onto the next target at a certain time.
 * Send to Pushover: Confirms everything is ready and we are actually starting imaging
@@ -117,7 +117,7 @@ Here's where the magic happens:
 
 ### Target End
 
-<ImageFromPath imagePath="2024_10_27/target_end.png" alt="We're done with this target." />
+<ImageFromPath imagePath="2024_10_29/target_end.png" alt="We're done with this target." />
 
 Once we're done with the target, stop guiding and send a push notification. The sequencer will move onto the next target if there is one or the end instructions.
 
@@ -125,20 +125,20 @@ Once we're done with the target, stop guiding and send a push notification. The 
 
 Our session has come to an end, so let's wrap up by sending a push notification, warming the camera, and parking the scope.
 
-<ImageFromPath imagePath="2024_10_27/all_done.png" alt="The session is over, time to power down." />
+<ImageFromPath imagePath="2024_10_29/all_done.png" alt="The session is over, time to power down." />
 
 ## Flats
 
 I typically shoot flats in the morning, but you can use this block during the sequence as well.
 
-<ImageFromPath imagePath="2024_10_27/flats.png" alt="Let's grab some calibration frames" />
+<ImageFromPath imagePath="2024_10_29/flats.png" alt="Let's grab some calibration frames" />
 
 * Unpark Scope
 * Stop Guiding
 * Cool Camera to the temperature we set for imaging (not strictly necessary)
 * Slew to Alt/Az: point the scope straight up at the sky
 * Set Tracking: Stop tracking since we won't be following the stars
-* Send to Pushover: Send me a notification to get off the couch and come outisde
+* Send to Pushover: Send me a notification to get off the couch and come outside
 * Message Box: Pause to add light panel/tablet
 * Take 25 exposures at the FLATTIME we defined in the settings
 * Message Box: Pause to remove light panel/tablet
@@ -155,3 +155,8 @@ This is how you control your metadata if you use a filter drawer or screw a filt
 
 * In N.I.N.A., go to Equipment > Rotator and select "Manual Rotator" from the dropdown.
 * Now if you add an instruction like "Solve and Rotate" or "Slew, Center, and Rotate", N.I.N.A. will measure your current rotation and give instructions on which way to rotate if it does not match the desired orientation.
+
+## Related Posts
+
+* [Astrophotography Rig](/2024-10-14-astro-rig)
+* [Astro Processing](/2024-06-16-astro-processing)
